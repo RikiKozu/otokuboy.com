@@ -43,3 +43,16 @@ document.querySelectorAll('.cards[data-page]').forEach(box => {
   if (more) more.querySelector('button').addEventListener('click', () => { shown += step; draw(); });
   draw();
 });
+
+// 記事の「動画で見る」: 押すとその場で YouTube を再生する（押すまで YouTube には接続しない）
+document.querySelectorAll('a.video[data-yt]').forEach(a => {
+  a.addEventListener('click', e => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    const f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + a.dataset.yt + '?autoplay=1&rel=0';
+    f.title = 'YouTube 動画'; f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true;
+    f.className = 'yt';
+    a.replaceWith(f);
+  });
+});
