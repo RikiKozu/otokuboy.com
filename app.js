@@ -56,3 +56,21 @@ document.querySelectorAll('a.video[data-yt]').forEach(a => {
     a.replaceWith(f);
   });
 });
+
+// 記事の画像をタップで大きく見る（細かい表や画面写真はスマホで読みにくいので）。もう一度タップ・Esc・背景で閉じる
+(() => {
+  const figs = document.querySelectorAll('.a-body .fig img');
+  if (!figs.length || !window.HTMLDialogElement) return;
+  const dlg = document.createElement('dialog');
+  dlg.className = 'zoom';
+  dlg.innerHTML = '<button type="button" aria-label="とじる">×</button><div><img alt=""></div>';
+  document.body.appendChild(dlg);
+  const big = dlg.querySelector('img');
+  dlg.addEventListener('click', () => dlg.close());
+  figs.forEach(im => {
+    im.tabIndex = 0; im.setAttribute('role', 'button'); im.setAttribute('aria-label', (im.alt || '画像') + '（大きく見る）');
+    const open = () => { big.src = im.currentSrc || im.src; big.alt = im.alt; dlg.showModal(); dlg.querySelector('div').scrollTo(0, 0); };
+    im.addEventListener('click', open);
+    im.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+  });
+})();
