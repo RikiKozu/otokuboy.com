@@ -241,3 +241,40 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 .brk{display:inline-block;margin-right:.45em;padding:.05em .5em;border-radius:5px;background:#e5342b;color:#fff;font-size:.62em;letter-spacing:.08em;vertical-align:.18em}
+
+/* ── 広告・紹介リンク（ads.py）── */
+.ads{margin:2.6em 0;display:grid;gap:18px}
+.ad{position:relative;background:#fff;border:2px solid var(--ink);border-radius:16px;box-shadow:6px 6px 0 var(--ink);overflow:hidden;font-size:15px;line-height:1.6}
+.ad-tag{margin:0!important;padding:5px 14px;background:var(--ink);color:var(--cream);font-family:var(--f-mono);font-size:11px;letter-spacing:.14em}
+.ad-in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center}
+.ad-pic{align-self:stretch;display:grid;place-items:center;padding:26px 22px;background:linear-gradient(135deg,color-mix(in srgb,var(--ad) 92%,#fff),color-mix(in srgb,var(--ad) 72%,#000))}
+.ad-pic img{width:100%;max-width:300px;height:auto;border-radius:10px;rotate:-6deg;box-shadow:0 14px 28px rgba(0,0,0,.35);transition:rotate .5s var(--ease),scale .5s var(--ease)}
+.ad:hover .ad-pic img{rotate:-2deg;scale:1.04}
+.ad-txt{padding:20px 22px 16px}
+.ad-logo{height:22px;width:auto;margin:0 0 10px}
+.ad-brand{margin:0 0 6px!important;font-weight:700;font-size:13px;color:var(--ad)}
+.ad-h{margin:0 0 8px!important;line-height:1.25}
+.ad-h small{display:block;font-size:14px;font-weight:700}
+.ad-h b{display:block;font-family:var(--f-display);font-weight:400;font-size:clamp(20px,3.4vw,26px);color:var(--ad);text-wrap:balance}
+.ad-h b span{font-family:var(--f-latin);font-size:1.9em;letter-spacing:.01em;line-height:1;margin:0 .04em;font-variant-numeric:tabular-nums}
+.ad-until{display:inline-block;margin:0 0 10px!important;padding:2px 10px;border-radius:999px;background:#FFE07A;font-weight:700;font-size:13px}
+.ad ul{list-style:none;margin:0 0 12px;padding:0;font-size:14px}
+.ad ul li{padding-left:1.3em;position:relative;margin:.15em 0}
+.ad ul li::before{content:"✓";position:absolute;left:0;color:var(--ad);font-weight:700}
+.ad-code{margin:0 0 12px!important;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700}
+.ad-code code{font-family:var(--f-mono);font-size:17px;padding:3px 12px;border:2px dashed var(--ad);border-radius:8px;user-select:all;background:#fff}
+.ad-btns{display:flex;flex-wrap:wrap;gap:8px}
+.ad-btn{flex:1 1 auto;display:inline-block;text-align:center;text-decoration:none;font-weight:700;font-size:15px;padding:12px 18px;border-radius:999px;background:var(--ad);color:#fff!important;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transition:translate .15s,box-shadow .15s}
+.ad-btn:hover{translate:2px 2px;box-shadow:1px 1px 0 var(--ink)}
+.ad-btn:focus-visible{outline:3px solid #FFE07A;outline-offset:2px}
+.ad-note{margin:0!important;padding:8px 14px;border-top:1px dashed var(--line);font-size:11.5px;line-height:1.6;color:rgba(42,26,18,.72)}
+.ad-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.ad-sub{box-shadow:4px 4px 0 var(--ink)}
+.ad-sub .ad-in{grid-template-columns:1fr}
+.ad-sub .ad-pic{padding:16px;background:#fff;border-bottom:3px solid var(--ad)}
+.ad-sub .ad-pic img{max-width:150px;max-height:64px;width:auto;object-fit:contain;rotate:none;box-shadow:none;border-radius:0}
+.ad-sub:hover .ad-pic img{rotate:none;scale:1}
+.ad-sub .ad-h b{font-size:19px}
+.ad-sub .ad-h b span{font-size:1.6em}
+@media (max-width:600px){.ad-in{grid-template-columns:1fr}.ad-pic{padding:22px}.ad-pic img{max-width:230px}}
+@media (prefers-reduced-motion:reduce){.ad-pic img,.ad-btn{transition:none}}
