@@ -239,3 +239,5 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   .a-head .hero{position:absolute;width:46%;right:-10%;top:auto;bottom:-8%;translate:none;opacity:.5;max-width:none}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.brk{display:inline-block;margin-right:.45em;padding:.05em .5em;border-radius:5px;background:#e5342b;color:#fff;font-size:.62em;letter-spacing:.08em;vertical-align:.18em}
