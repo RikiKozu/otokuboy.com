@@ -291,3 +291,13 @@ dialog.zoom div{width:100%;height:100%;overflow:auto;display:grid;place-items:ce
 dialog.zoom img{max-width:none;width:max(100vw,min(1100px,180vw));height:auto}
 dialog.zoom button{position:fixed;top:12px;right:12px;z-index:1;width:44px;height:44px;border-radius:50%;border:2px solid #fff;background:#000;color:#fff;font-size:22px;line-height:1;cursor:pointer}
 @media (min-width:900px){dialog.zoom img{width:min(1400px,94vw)}}
+
+.travel-topics { display: grid; grid-template-columns: 1fr 1.55fr; gap: 1rem; padding-block: 1.6rem 0.5rem; }
+.travel-topics section { min-width: 0; border: 1px solid #d9e2dd; border-radius: 14px; padding: 1rem; background: #f8fbf9; }
+.travel-topics h2, .travel-latest { margin: 0 0 0.75rem; font-size: 1.25rem; }
+.travel-topics section > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.65rem; }
+.travel-topics a { display: grid; gap: 0.3rem; align-content: start; min-height: 3.4rem; padding: 0.7rem; border-radius: 8px; border: 1px solid #cad9d1; background: white; color: #123d32; text-decoration: none; }
+.travel-topics a:hover, .travel-topics a:focus-visible { background: #e9f5ee; outline: 2px solid #3a705e; outline-offset: 1px; }
+.travel-topics a span { font-size: 0.83rem; color: #344f46; }
+@media (max-width: 760px) { .travel-topics { grid-template-columns: 1fr; } }
+@media (max-width: 380px) { .travel-topics section > div { grid-template-columns: 1fr; } }
