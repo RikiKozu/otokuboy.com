@@ -108,6 +108,27 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .card .hook{font-family:var(--f-display);font-size:19px;line-height:1.25}
 .card .t{font-weight:700;font-size:14px;line-height:1.55;word-break:auto-phrase}
 .card .m{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;opacity:.8}
+.money-cover{
+  container-type:inline-size;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 39%;
+  align-items:center;
+  aspect-ratio:16/9;
+  padding:0 6%;
+  color:var(--bg);
+  background:radial-gradient(ellipse at 82% 50%,color-mix(in srgb,var(--fg) 62%,var(--bg)),var(--fg) 72%);
+}
+.card .money-cover .hook{
+  position:relative;
+  z-index:1;
+  font-size:clamp(19px,9cqi,46px);
+  line-height:1.15;
+  text-wrap:balance;
+  word-break:auto-phrase;
+  overflow-wrap:anywhere;
+}
+.money-cover .brk{display:table;margin:0 0 .6em;font-size:.42em}
+.money-cover img{width:116%;margin-inline-start:-3%;filter:drop-shadow(0 8px 9px #0005)}
 
 /* ── 足元 ── */
 .foot{background:var(--ink);color:var(--cream);margin-top:60px;padding:54px 0 40px;font-size:13.5px}
